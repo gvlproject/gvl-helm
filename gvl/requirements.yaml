@@ -1,0 +1,16 @@
+## Here, helm keeps track of the dependencies that are required for the
+## application. Dependencies should be listed here, then the dependencies
+## updated with:
+##
+##    helm dep update
+##
+## and the requirements.lock file committed.
+dependencies:
+  - name: galaxy
+    repository: https://raw.githubusercontent.com/CloudVE/helm-charts/master
+    version: 3.0.0
+    condition: galaxy.enabled
+  - name: jupyterhub
+    repository: https://jupyterhub.github.io/helm-chart/
+    version: 0.8.2
+    condition: jupyterhub.enabled

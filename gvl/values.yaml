@@ -1,0 +1,35 @@
+# Default values for gvl.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+galaxy:
+  enabled: true
+  jobs:
+    rules:
+      container-mapper-rules.yml: |
+        mappings:
+          - tool_ids:
+              - sort1
+              - Grouping1
+            container:
+              docker_container_id_override: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+  persistence:
+    storageClass:
+  postgresql:
+    persistence:
+      storageClass:
+  ingress:
+    enabled: true
+    path: /gvl/galaxy
+
+jupyterhub:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - ~
+  hub:
+    cookieSecret: changeme7dfedf3e19ca2b814b96e2235a79b9b465cd8cfec32c929e8d866bcd
+    baseUrl: /gvl/jupyter
+  proxy:
+    secretToken: changeme0c903ef6f140d5c56e7319723f67bd1d8cb0e7e8ce477ed0a1acfaf9

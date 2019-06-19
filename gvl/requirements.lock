@@ -1,0 +1,9 @@
+dependencies:
+- name: galaxy
+  repository: https://raw.githubusercontent.com/CloudVE/helm-charts/master
+  version: 3.0.0
+- name: jupyterhub
+  repository: https://jupyterhub.github.io/helm-chart/
+  version: 0.8.2
+digest: sha256:5dd5873b196305994c2d547c82aa65f59d227728d75e218d8034d07f2fe6d654
+generated: "2019-06-18T18:20:26.431567+05:30"
